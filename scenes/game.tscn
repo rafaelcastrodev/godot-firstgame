@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://d34fnaunsfn05"]
+[gd_scene load_steps=18 format=3 uid="uid://d34fnaunsfn05"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_n2l3u"]
 [ext_resource type="PackedScene" uid="uid://vt5pmmj330ml" path="res://scenes/player.tscn" id="1_rscql"]
@@ -7,8 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://isnjxht8mm3r" path="res://scenes/platform.tscn" id="3_u1n8d"]
 [ext_resource type="PackedScene" uid="uid://c2cnevywns0si" path="res://scenes/coin.tscn" id="4_ow6yx"]
 [ext_resource type="PackedScene" uid="uid://birilfdmlkqdm" path="res://scenes/killzone.tscn" id="5_w1gju"]
+[ext_resource type="PackedScene" uid="uid://pykox6gd1ndg" path="res://scenes/platform_animated.tscn" id="6_3uk11"]
 [ext_resource type="PackedScene" uid="uid://c5vre5aspu68e" path="res://scenes/slime.tscn" id="6_yw5t3"]
 [ext_resource type="FontFile" uid="uid://cosvq0ahbderv" path="res://assets/fonts/PixelOperator8.ttf" id="7_1xk2n"]
+[ext_resource type="Script" path="res://scripts/platform_animated.gd" id="7_6bt04"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1krlj"]
 texture = ExtResource("2_dcptq")
@@ -553,10 +555,15 @@ libraries = {
 }
 autoplay = "move"
 
+[node name="PlatformAnimated" parent="====== PLATFORMS" instance=ExtResource("6_3uk11")]
+z_index = 5
+position = Vector2(369, 64)
+script = ExtResource("7_6bt04")
+
 [node name="====== PLAYER" type="Node" parent="."]
 
 [node name="Player" parent="====== PLAYER" instance=ExtResource("1_rscql")]
-position = Vector2(24, 40)
+position = Vector2(24, 42)
 
 [node name="Camera2D" type="Camera2D" parent="====== PLAYER/Player"]
 position = Vector2(0, -8)
