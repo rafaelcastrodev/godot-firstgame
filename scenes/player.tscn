@@ -19,9 +19,9 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("1_krh7b")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a5ral"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_36jo3"]
 atlas = ExtResource("1_krh7b")
-region = Rect2(0, 160, 32, 32)
+region = Rect2(224, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uenl1"]
 atlas = ExtResource("1_krh7b")
@@ -108,7 +108,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a5ral")
+"texture": SubResource("AtlasTexture_36jo3")
 }],
 "loop": true,
 "name": &"jump",
@@ -180,8 +180,9 @@ script = ExtResource("1_ibnyx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_d0fnk")
-animation = &"jump"
+animation = &"run"
 autoplay = "idle"
+frame_progress = 0.538354
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
