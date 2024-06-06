@@ -195,3 +195,7 @@ volume_db = -14.0
 bus = &"SFX"
 
 [node name="SfxJumpLanding" type="AudioStreamPlayer2D" parent="."]
+
+[node name="CoyoteTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="CoyoteTimer" to="." method="_on_coyote_timer_timeout"]
