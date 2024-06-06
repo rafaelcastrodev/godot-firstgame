@@ -6,4 +6,4 @@
 position = Vector2(544, -148)
 stream = ExtResource("1_7ogiq")
 autoplay = true
-bus = &"SFX"
+bus = &"Music"

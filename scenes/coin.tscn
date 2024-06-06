@@ -128,7 +128,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PickupSound:playing")
+tracks/2/path = NodePath("SfxPickup:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -167,7 +167,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("PickupSound:playing")
+tracks/2/path = NodePath("SfxPickup:playing")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -209,8 +209,9 @@ autoplay = "default"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rv8yo")
 
-[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+[node name="SfxPickup" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_2d5hs")
+volume_db = -8.0
 bus = &"SFX"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

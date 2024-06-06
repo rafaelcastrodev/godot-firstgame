@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://d34fnaunsfn05"]
+[gd_scene load_steps=15 format=3 uid="uid://d34fnaunsfn05"]
 
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_n2l3u"]
 [ext_resource type="PackedScene" uid="uid://vt5pmmj330ml" path="res://scenes/player.tscn" id="1_rscql"]
@@ -450,44 +450,6 @@ sources/0 = SubResource("TileSetAtlasSource_1krlj")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_02u7p"]
 
-[sub_resource type="Animation" id="Animation_jvpvl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(369, 53)]
-}
-
-[sub_resource type="Animation" id="Animation_3iteb"]
-resource_name = "move"
-length = 5.0
-loop_mode = 2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.7, 4.4, 5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector2(369, 53), Vector2(369, 53), Vector2(495, 53), Vector2(495, 53)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2668m"]
-_data = {
-"RESET": SubResource("Animation_jvpvl"),
-"move": SubResource("Animation_3iteb")
-}
-
 [node name="Game" type="Node2D"]
 
 [node name="====== MANAGERS" type="Node" parent="."]
@@ -546,15 +508,6 @@ position = Vector2(104, -40)
 [node name="Platform" parent="====== PLATFORMS" instance=ExtResource("3_u1n8d")]
 position = Vector2(32, 6)
 
-[node name="Platform2" parent="====== PLATFORMS" instance=ExtResource("3_u1n8d")]
-position = Vector2(369, 53)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="====== PLATFORMS/Platform2"]
-libraries = {
-"": SubResource("AnimationLibrary_2668m")
-}
-autoplay = "move"
-
 [node name="PlatformAnimated" parent="====== PLATFORMS" instance=ExtResource("6_3uk11")]
 z_index = 5
 position = Vector2(369, 64)
@@ -563,7 +516,7 @@ script = ExtResource("7_6bt04")
 [node name="====== PLAYER" type="Node" parent="."]
 
 [node name="Player" parent="====== PLAYER" instance=ExtResource("1_rscql")]
-position = Vector2(24, 42)
+position = Vector2(345, 36)
 
 [node name="Camera2D" type="Camera2D" parent="====== PLAYER/Player"]
 position = Vector2(0, -8)
